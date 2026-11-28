@@ -1,95 +1,127 @@
-# Food Image Recipe Generator
+# 🍔 Food Image Recipe Generator
 
-An intelligent web-based dashboard that recognizes food from images and generates instant ingredient lists and nutrition facts using deep learning and large language models.
+<div align="center">
+
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.0-black?logo=flask)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-orange?logo=tensorflow)
+![VGG16](https://img.shields.io/badge/VGG16-DeepLearning-red)
+![Groq](https://img.shields.io/badge/Groq-LLaMA-blue)
+
+**AI-Powered Food Recognition & Nutrition Generator**
+
+[![View Demo](https://img.shields.io/badge/View-Demo-blue)]()
+[![Report Issue](https://img.shields.io/badge/Report-Issue-red)](https://github.com/samalarakshithbabu/food-image-recipe-generator/issues)
+
+</div>
 
 ---
 
-## Problem Statement
+## 🚀 Executive Summary
 
-Manual food identification and nutrition lookup is tedious. This system automates food recognition from images and provides AI-generated ingredient and nutrition information.
+An **AI-powered web application** that identifies food from images and generates instant ingredient lists and nutrition facts using deep learning (VGG16) and the Groq LLM (LLaMA 3.3). Just snap a photo and learn what's on your plate!
 
-## Objectives
+### What It Does
 
-- Classify food images into 101 categories using VGG16
-- Generate ingredient lists and nutrition facts via LLM
-- Provide a responsive web interface for image upload
-- Display predictions and nutritional information side-by-side
+```mermaid
+graph LR
+    A[Food Image] --> B[VGG16 Model]
+    B --> C[101 Food Categories]
+    C --> D[Groq LLM API]
+    D --> E[Ingredients & Nutrition]
+    E --> F[Dashboard Display]
+```
 
-## Key Features
+---
 
-- **Food Image Recognition** — upload a photo; AI classifies from 101 food categories
-- **Deep Learning Model** — custom-trained VGG16 CNN architecture
-- **Smart Ingredient & Nutrition Generation** — Groq LLM API (LLaMA 3.3 70B) for human-readable insights
-- **Modern UI** — responsive HTML + TailwindCSS frontend
-- **Interactive Output** — predictions, ingredients, and nutritional content displayed together
+## ✨ Key Features
 
-## How It Works
+| Feature | Description |
+|---------|-------------|
+| **Food Recognition** | Classifies from 101 food categories |
+| **VGG16 Deep Learning** | Custom-trained CNN model |
+| **Smart Ingredient Generation** | Groq LLM (LLaMA 3.3 70B) |
+| **Nutrition Facts** | AI-generated nutritional information |
+| **Modern UI** | Responsive HTML + Tailwind CSS |
 
-1. **Frontend**: User uploads an image via dashboard UI
-2. **Backend**:
-   - Image is processed and resized (224×224)
-   - Fed into trained VGG16 model (`vgg16_food101_trained.h5`)
-   - Predicted class passed to Groq LLM to fetch ingredients and nutritional facts
-3. **Results**: Displayed in real-time
+---
 
-## Model Details
+## 🧠 Model Details
 
-- Based on VGG16 architecture (no top layers)
-- Trained on Food-101 dataset with image augmentations
-- 101 output classes (softmax layer)
-- ~80 epochs, batch size 16
+| Aspect | Details |
+|--------|---------|
+| **Architecture** | VGG16 (no top layers) |
+| **Dataset** | Food-101 with augmentations |
+| **Classes** | 101 food categories |
+| **Training** | ~80 epochs, batch size 16 |
 
-## Technologies Used
+---
 
-| Component | Technology |
-|-----------|-----------|
-| Backend | Python (Flask) |
-| Deep Learning | TensorFlow/Keras (VGG16) |
-| LLM | Groq API (LLaMA 3.3 70B) |
-| Frontend | HTML, TailwindCSS |
+## 🛠️ Technology Stack
 
-## Project Structure
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| **Backend** | Python + Flask | Web server |
+| **Deep Learning** | TensorFlow/Keras | VGG16 model |
+| **LLM** | Groq API | Ingredient generation |
+| **Frontend** | HTML + TailwindCSS | UI |
+
+---
+
+## 📁 Project Structure
 
 ```
 food-image-recipe-generator/
-├── app.py                          # Flask backend for image upload and API
-├── model.py                        # Model architecture and training code
+├── app.py                          # Flask backend
+├── model.py                        # Model architecture & training
 ├── vgg16_food101_trained.h5       # Trained model weights
 ├── templates/
 │   └── index.html                  # Dashboard UI
-├── static/                         # Optional styles/images
-├── api.txt                         # API key and class labels
-└── README.md
+├── static/                         # Styles/images
+├── api.txt                         # API key & labels
+└── README.md                       # This file
 ```
 
-## Installation and Setup
+---
+
+## 🛠️ Installation
 
 ### Prerequisites
 - Python 3.8+
-- pip
 - Groq API key
 
 ### Setup
 ```bash
+git clone https://github.com/samalarakshithbabu/food-image-recipe-generator.git
+cd food-image-recipe-generator
 pip install -r requirements.txt
-# Set Groq API key in api.txt or environment variable
+
+# Set Groq API key in api.txt or environment
 python app.py
 ```
 
-## Limitations
+---
 
-- Model file (`vgg16_food101_trained.h5`) is large and may not be included in repository
-- Accuracy claims not independently verified
-- Requires Groq API key for nutrition generation
+## ⚠️ Limitations
 
-## Author and Contact Information
+| Limitation | Description |
+|------------|-------------|
+| **Model File** | vgg16_food101_trained.h5 may be large |
+| **API Key Required** | Groq API key needed for nutrition |
+| **Accuracy** | Claims not independently verified |
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
 
 **SAMALA RAKSHITH BABU**
 
-- Email: samalarakshithbabu7@gmail.com
-- LinkedIn: https://www.linkedin.com/in/samala-rakshith-babu-9374ab281/
-- GitHub: https://github.com/samalarakshithbabu
-
-## License
-
-No LICENSE file present in repository.
+- 📧 Email: samalarakshithbabu7@gmail.com
+- 💼 LinkedIn: [samala-rakshith-babu](https://www.linkedin.com/in/samala-rakshith-babu/)
+- 🐙 GitHub: [samalarakshithbabu](https://github.com/samalarakshithbabu)
